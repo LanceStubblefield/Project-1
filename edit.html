@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Entry</h1>
+
+    <form>
+        <form action="/create" method=POST>
+            {% csrf_token %}
+        <input type="text" name="new_page" placeholder="Enter page name here">
+    </form>
+    <br>
+    <form>
+        <form action="/create" method=POST>
+            {% csrf_token %}
+        <textarea style="width:500px; height:200px;"id="entry" name="entry" placeholder="Enter text for new page here"></textarea>
+        <input type="submit" value="Save Changes">
+    </form>
+
+
+    <a href="{% url 'index' %}">View Pages</a>
+{% endblock %}
+
